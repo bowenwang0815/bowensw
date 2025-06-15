@@ -1,103 +1,122 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect } from 'react';
+import ExperienceCard from '../components/ExperienceCard';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  useEffect(() => {
+    // Handle hash changes
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash && hash.length > 1) {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    window.addEventListener('hashchange', handleHashChange);
+    // Initial hash check
+    handleHashChange();
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  return (
+    <main className="min-h-screen">
+      {/* Navigation Header */}
+      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-sm shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <div className="flex-shrink-0">
+              <a href="#home" className="text-xl font-bold">Bowen Wang</a>
+            </div>
+            <div className="hidden sm:flex sm:space-x-8">
+              <a href="#home" className="text-gray-900 hover:text-gray-600 px-3 py-2">Home</a>
+              <a href="#about" className="text-gray-900 hover:text-gray-600 px-3 py-2">About</a>
+              <a href="#experiences" className="text-gray-900 hover:text-gray-600 px-3 py-2">Experiences</a>
+
+              <a href="#projects" className="text-gray-900 hover:text-gray-600 px-3 py-2">Projects</a>
+              <a href="#resume" className="text-gray-900 hover:text-gray-600 px-3 py-2">Resume</a>
+
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </nav>
+
+      {/* Main Content Sections */}
+      <div className="pt-16">
+        {/* Home Section */}
+        <section id="home" className="min-h-screen flex items-center justify-center bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Bowen Wang</h1>
+            <p className="text-xl text-gray-600">I am a Full Stack Developer passionate about creating innovative solutions and building meaningful products to help others!</p>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="min-h-screen flex items-center justify-center bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">About Me</h2>
+            <p className="text-lg text-gray-600">Hi, I am Bowen. I am a first-generation college student, originally from China. I moved to Southern California when I was nine and have lived here ever since.
+
+I am currently studying Computer Science and Business Information Management at UC Irvine. I enjoy building software that solves real problems, whether it is through full-stack development, data analysis, or working with nonprofits.
+
+In my free time, I like playing basketball, going to concerts, and traveling! I am hoping to travel to Japan again and see more of the historic parts of China.</p>
+          </div>
+        </section>
+
+        {/* Experiences Section */}
+        <section id="experiences" className="min-h-screen flex items-center justify-center bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Experiences</h2>
+            <div className="flex flex-col gap-8 w-full">
+              <ExperienceCard
+                logo="/profile.jpg"
+                image="/profile.jpg"
+                role="Software Engineer Intern"
+                name="Example Company"
+                description="Worked on building scalable web applications and contributed to the team's success."
+                timeframe="June 2023 - August 2023"
+                link="https://example.com"
+                rounded={true}
+              />
+              <ExperienceCard
+                logo="/profile.jpg"
+                image="/profile.jpg"
+                role="Full Stack Developer"
+                name="Another Company"
+                description="Developed full-stack features and improved user experience for thousands of users."
+                timeframe="September 2022 - May 2023"
+                link="https://another.com"
+                rounded={false}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="min-h-screen flex items-center justify-center bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">My Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Project cards will go here */}
+            </div>
+          </div>
+        </section>
+
+        {/* Resume Section */}
+        <section id="resume" className="min-h-screen flex items-center justify-center bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Resume</h2>
+            <div className="space-y-8">
+              {/* Resume content will go here */}
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
