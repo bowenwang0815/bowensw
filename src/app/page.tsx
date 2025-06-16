@@ -116,6 +116,7 @@ export default function Home() {
       </nav>
 
       {/* Main Content Sections */}
+      
       <div>
         <HomeSection />
 
