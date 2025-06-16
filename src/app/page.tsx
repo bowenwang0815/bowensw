@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
+import AboutSection from '../components/AboutSection';
 import ExperiencesSection from '../components/ExperiencesSection';
 import ProjectsSection from '../components/ProjectsSection';
+import GitHubCalendarSection from '../components/GitHubCalendarSection';
 
 export default function Home() {
   useEffect(() => {
@@ -58,22 +60,16 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="min-h-screen flex items-center justify-center bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">About Me</h2>
-            <p className="text-lg text-gray-600">Hi, I am Bowen. I am a first-generation college student, originally from China. I moved to Southern California when I was nine and have lived here ever since.
-
-I am currently studying Computer Science and Business Information Management at UC Irvine. I enjoy building software that solves real problems, whether it is through full-stack development, data analysis, or working with nonprofits.
-
-In my free time, I like playing basketball, going to concerts, and traveling! I am hoping to travel to Japan again and see more of the historic parts of China.</p>
-          </div>
-        </section>
+        <AboutSection />
 
         {/* Experiences Section */}
         <ExperiencesSection />
 
         {/* Projects Section */}
         <ProjectsSection />
+
+        {/* GitHub Calendar Section */}
+        <GitHubCalendarSection />
 
         {/* Resume Section */}
         <section id="resume" className="min-h-screen flex items-center justify-center bg-gray-50">
