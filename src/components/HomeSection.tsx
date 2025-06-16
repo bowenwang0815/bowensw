@@ -9,7 +9,7 @@ export default function HomeSection() {
   }, []);
 
   return (
-    <section id="home"  className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <section id="home"  className="min-h-screen flex items-center justify-center bg-white px-4">
       <div data-aos="zoom-in" className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-20 py-20">
         
         {/* Text content */}
