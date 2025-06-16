@@ -43,7 +43,14 @@ export default function Home() {
               <a href="#experiences" className="text-gray-900 hover:text-gray-600 px-3 py-2">Experiences</a>
 
               <a href="#projects" className="text-gray-900 hover:text-gray-600 px-3 py-2">Projects</a>
-              <a href="#resume" className="text-gray-900 hover:text-gray-600 px-3 py-2">Resume</a>
+              <a
+                href="/BowenWangResume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-900 hover:text-gray-600 px-3 py-2"
+              >
+                Resume
+              </a>
 
             </div>
           </div>
@@ -51,7 +58,7 @@ export default function Home() {
       </nav>
 
       {/* Main Content Sections */}
-      <div className="pt-16">
+      <div>
         <HomeSection />
 
         {/* About Section */}
@@ -66,15 +73,7 @@ export default function Home() {
         {/* GitHub Calendar Section */}
         <GitHubCalendarSection />
 
-        {/* Resume Section */}
-        <section id="resume" className="min-h-screen flex items-center justify-center bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Resume</h2>
-            <div className="space-y-8">
-              {/* Resume content will go here */}
-            </div>
-          </div>
-        </section>
+        
       </div>
     </main>
   );
