@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import HomeSection from '../components/HomeSection';
 import AboutSection from '../components/AboutSection';
 import ExperiencesSection from '../components/ExperiencesSection';
 import ProjectsSection from '../components/ProjectsSection';
@@ -51,13 +52,7 @@ export default function Home() {
 
       {/* Main Content Sections */}
       <div className="pt-16">
-        {/* Home Section */}
-        <section id="home" className="min-h-screen flex items-center justify-center bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Bowen Wang</h1>
-            <p className="text-xl text-gray-600">I am a Full Stack Developer passionate about creating innovative solutions and building meaningful products to help others!</p>
-          </div>
-        </section>
+        <HomeSection />
 
         {/* About Section */}
         <AboutSection />

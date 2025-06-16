@@ -27,6 +27,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <section data-aos="fade-up">...</section>
+        <div data-aos="zoom-in">...</div>
         {children}
       </body>
     </html>
