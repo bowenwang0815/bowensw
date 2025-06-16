@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export type ExperienceCardProps = {
   logo: string;
@@ -22,31 +23,51 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   rounded,
 }) => {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-full xl:w-4/5 mx-auto text-white bg-black border-2 border-gray-500 rounded-md hover:scale-105 transform shadow-md p-6 transition-all duration-300 block mb-6"
-    >
-      <div className="flex flex-col lg:flex-row text-center gap-8 lg:gap-0 sm:text-start sm:justify-normal">
-        <div className="flex flex-col justify-center xl:justify-normal w-full xl:w-1/2 px-4 sm:px-8 text-start">
-          <img
-            className={`drop-shadow-md h-8 sm:h-12 w-8 sm:w-12 mb-3 ${rounded ? 'rounded-3xl' : ''}`}
-            src={logo}
-            alt="Logo"
-          />
-          <div className="text-sm sm:text-xl xl:text-2xl text-start tracking-wide font-semibold">{role}</div>
-          <p className="text-xs sm:text-sm xl:text-base font-extralight text-gray-400">{name}</p>
-          <p className="text-xs sm:text-sm xl:text-base pt-2 pb-3">{description}</p>
-          <p className="text-xs sm:text-sm xl:text-base mt-auto font-extralight text-gray-400">{timeframe}</p>
+    <div className="w-full xl:w-4/5 mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden flex flex-col lg:flex-row transition-transform hover:scale-[1.02] hover:shadow-2xl duration-300">
+      {/* Left: Info */}
+      <div className="flex-1 p-8 flex flex-col justify-between">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="flex-shrink-0">
+            <Image
+              src={logo}
+              alt="Logo"
+              width={56}
+              height={56}
+              className={`rounded-full border-2 border-gray-200 bg-white object-contain ${rounded ? 'shadow-lg' : ''}`}
+            />
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 leading-tight">{role}</h3>
+            <span className="inline-block mt-1 px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-700 rounded-full tracking-wide border border-gray-200">
+              {name}
+            </span>
+          </div>
         </div>
-        <img
-          className="mx-auto my-auto drop-shadow-md h-auto lg:h-[250px] xl:h-[300px] w-full lg:w-[600px] 2xl:w-[650px] sm:pb-0 rounded-lg object-cover"
+        <div className="text-gray-700 text-base mb-4">
+          {description}
+        </div>
+        <div className="text-gray-400 text-sm mb-6">
+          {timeframe}
+        </div>
+      </div>
+      {/* Right: Image with overlay, clickable */}
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative flex-1 min-h-[220px] lg:min-h-0 lg:w-[350px] xl:w-[400px] 2xl:w-[450px] flex items-center justify-center group"
+        tabIndex={0}
+        aria-label={`Visit ${name}`}
+      >
+        <Image
           src={image}
           alt="Experience visual"
+          fill
+          className="object-cover rounded-br-2xl rounded-tr-2xl z-0 group-hover:scale-105 transition-transform"
+          style={{ objectPosition: 'center' }}
         />
-      </div>
-    </a>
+      </a>
+    </div>
   );
 };
 

@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import ExperienceCard from '../components/ExperienceCard';
+import ExperiencesSection from '../components/ExperiencesSection';
+import ProjectsSection from '../components/ProjectsSection';
 
 export default function Home() {
   useEffect(() => {
@@ -69,43 +70,10 @@ In my free time, I like playing basketball, going to concerts, and traveling! I 
         </section>
 
         {/* Experiences Section */}
-        <section id="experiences" className="min-h-screen flex items-center justify-center bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Experiences</h2>
-            <div className="flex flex-col gap-8 w-full">
-              <ExperienceCard
-                logo="/profile.jpg"
-                image="/profile.jpg"
-                role="Software Engineer Intern"
-                name="Example Company"
-                description="Worked on building scalable web applications and contributed to the team's success."
-                timeframe="June 2023 - August 2023"
-                link="https://example.com"
-                rounded={true}
-              />
-              <ExperienceCard
-                logo="/profile.jpg"
-                image="/profile.jpg"
-                role="Full Stack Developer"
-                name="Another Company"
-                description="Developed full-stack features and improved user experience for thousands of users."
-                timeframe="September 2022 - May 2023"
-                link="https://another.com"
-                rounded={false}
-              />
-            </div>
-          </div>
-        </section>
+        <ExperiencesSection />
 
         {/* Projects Section */}
-        <section id="projects" className="min-h-screen flex items-center justify-center bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">My Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Project cards will go here */}
-            </div>
-          </div>
-        </section>
+        <ProjectsSection />
 
         {/* Resume Section */}
         <section id="resume" className="min-h-screen flex items-center justify-center bg-gray-50">
