@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "touch out/.nojekyll"
+    "postbuild": "touch out/.nojekyll",
+    "generate-icons": "node scripts/generate-icons.js"
   },
   "dependencies": {
     "aos": "^2.3.4",
@@ -26,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "sharp": "^0.34.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
