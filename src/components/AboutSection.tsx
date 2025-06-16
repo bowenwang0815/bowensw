@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AboutSection() {
   return (
-    <section id="about" data-aos="fade-up" className="relative min-h-screen flex items-center justify-center bg-white px-4">
+    <section id="about" className="relative min-h-screen flex items-center justify-center bg-gray-50 px-4">
       {/* Side images for desktop */}
       <div data-aos="fade-right" className="hidden md:block absolute left-10 top-1/4 z-10">
         <Image
@@ -24,7 +24,7 @@ export default function AboutSection() {
       </div>
 
       {/* Main content */}
-      <div className="w-full max-w-3xl py-20 text-center z-20">
+      <div data-aos="fade-up" className="w-full max-w-3xl py-20 text-center z-20">
         {/* Top image for mobile */}
         <div className="md:hidden mb-6">
           <Image

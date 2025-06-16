@@ -8,6 +8,7 @@ export default function ExperiencesSection() {
         <div className="flex flex-col gap-8 w-full">
           {/* Example Experience Cards - replace with your own data/images */}
           <ExperienceCard
+            
             logo="/ctc.svg"
             image="/ctc.svg"
             role="Full Stack Developer"

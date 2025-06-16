@@ -23,7 +23,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   rounded,
 }) => {
   return (
-    <div className="w-full xl:w-4/5 mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden flex flex-col lg:flex-row transition-transform hover:scale-[1.02] hover:shadow-2xl duration-300">
+    <div data-aos="fade-up" className="w-full xl:w-4/5 mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden flex flex-col lg:flex-row transition-transform hover:scale-[1.02] hover:shadow-2xl duration-300">
       {/* Left: Info */}
       <div className="flex-1 p-8 flex flex-col justify-between">
         <div className="flex items-center gap-4 mb-4">
