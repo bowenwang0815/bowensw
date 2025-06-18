@@ -23,7 +23,31 @@ export const metadata: Metadata = {
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
     ]
-  }
+  },
+  // Open Graph metadata for better link previews
+  openGraph: {
+    title: 'Bowen Wang',
+    description: 'Full Stack Developer passionate about creating innovative solutions',
+    url: 'https://bowenwang.vercel.app',
+    siteName: 'Bowen Wang',
+    images: [
+      {
+        url: '/me.jpg', // Using your profile picture
+        width: 800,
+        height: 600,
+        alt: 'Bowen Wang',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  // Twitter card metadata
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bowen Wang',
+    description: 'Full Stack Developer passionate about creating innovative solutions',
+    images: ['/me.jpg'], // Using your profile picture
+  },
 };
 
 export default function RootLayout({

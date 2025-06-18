@@ -27,7 +27,7 @@ export default function ProjectsSection() {
            <ProjectCard
             image="/touchinggrass.png"
             title="Touching Grass"
-            description="Touching Grass is a mobile app that encourages users to explore the outdoors by letting them identify plants in real time.￼"
+            description="Touching Grass is a mobile app that encourages users to explore the outdoors by letting them identify plants in real time."
             tech={["Swift", "Gemini AI"]}
             link="https://devpost.com/software/touching-grass-dc259j"
             github="https://github.com/bowenwang0815/TouchingGrass"
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
           <ProjectCard
             image="/petrpage.png"
             title="PetrPage"
-            description="PetrPage is a social media app designed to connect users within shared communities. It supports both casual hangouts and productivity-focused interactions, making it versatile for chat, collaboration, and social engagement.￼"
+            description="PetrPage is a social media app designed to connect users within shared communities. It supports both casual hangouts and productivity-focused interactions, making it versatile for chat, collaboration, and social engagement."
             tech={["React", "Node.js", "Python", "SQLite3"]}
             link="https://devpost.com/software/petrpage"
             github="https://github.com/theNatePi/PetrPages"
