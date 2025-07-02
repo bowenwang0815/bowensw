@@ -15,13 +15,13 @@ export default function HomeSection() {
         
         {/* Text content */}
         <div className="text-center md:text-left flex-1 max-w-md">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Bowen Wang</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Hello, I'm Bowen Wang</h1>
           <div className="min-h-[6rem] flex items-center">
             <TypewriterText 
               texts={[
-                "I'm Bowen Wang, a Full Stack Developer",
-                "I'm Bowen Wang, a Software Engineer",
-                "I'm Bowen Wang, a Problem Solver ",
+                "A Full Stack Developer",
+                "A Software Engineer",
+                "A Problem Solver ",
               ]}
               speed={80}
               deleteSpeed={40}
