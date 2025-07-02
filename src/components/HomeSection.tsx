@@ -2,6 +2,7 @@ import Image from 'next/image';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect } from 'react';
+import TypewriterText from './TypewriterText';
 
 export default function HomeSection() {
   useEffect(() => {
@@ -15,9 +16,18 @@ export default function HomeSection() {
         {/* Text content */}
         <div className="text-center md:text-left flex-1 max-w-md">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Bowen Wang</h1>
-          <p className="text-xl text-gray-600">
-            I am a Full Stack Developer passionate about creating innovative solutions and building meaningful products to help others. Experienced in building scalable web apps and working across the stack.
-          </p>
+          <div className="min-h-[6rem] flex items-center">
+            <TypewriterText 
+              texts={[
+                "I'm Bowen Wang, a Full Stack Developer",
+                "I'm Bowen Wang, a Software Engineer",
+                "I'm Bowen Wang, a Problem Solver ",
+              ]}
+              speed={80}
+              deleteSpeed={40}
+              pauseTime={2500}
+            />
+          </div>
         </div>
 
         {/* Image */}
