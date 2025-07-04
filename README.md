@@ -1,16 +1,15 @@
 # 👋 Hey there! Welcome to My Personal Website
 
-## 🎯 What's This All About?
-This is my digital playground where I showcase my journey, project. Built with Next.js, TypeScript, and a sprinkle of Tailwind CSS magic.
 
-
-## 🛠️ Tech Stack
 - **Next.js** - Because React wasn't complicated enough
 - **TypeScript** - For when JavaScript just isn't type-safe enough
 - **Tailwind CSS** - Making me look like I know design
 - **AOS** - For those fancy scroll animations
 - **React Icons** - Because emojis are so 2020
 
+
+## to do
+need to add skills list, course taken, etc...
 ## 🏃‍♂️ Running Locally
 1. Clone this repo (if you haven't already)
 ```bash

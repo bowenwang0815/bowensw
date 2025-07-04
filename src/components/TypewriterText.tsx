@@ -59,9 +59,12 @@ export default function TypewriterText({
   }, [currentText, currentTextIndex, isDeleting, isPaused, texts, speed, deleteSpeed, pauseTime]);
 
   return (
-    <span className="text-xl text-gray-600">
-      {currentText}
-      <span className="animate-pulse">|</span>
-    </span>
+    <div className="relative">
+      <span className="text-2xl font-semibold bg-gradient-to-r from-gray-700 via-gray-600 to-gray-800 bg-clip-text text-transparent">
+        {currentText}
+        <span className="animate-pulse text-gray-500">|</span>
+      </span>
+      <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 rounded-full"></div>
+    </div>
   );
 } 
