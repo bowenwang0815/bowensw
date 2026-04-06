@@ -1,52 +1,43 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Bowen Wang",
-  description: "Personal website of Bowen Wang",
+  metadataBase: new URL("https://bowenwang.vercel.app"),
+  title: "Bowen Wang | Software Engineer",
+  description:
+    "Portfolio for Bowen Wang, a UC Irvine developer building full-stack products, community tools, and practical software.",
   icons: {
     icon: [
-      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' }
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
-    ]
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
-  // Open Graph metadata for better link previews
   openGraph: {
-    title: 'Bowen Wang',
-    description: 'Full Stack Developer passionate about creating innovative solutions',
-    url: 'https://bowenwang.vercel.app',
-    siteName: 'Bowen Wang',
+    title: "Bowen Wang | Software Engineer",
+    description:
+      "Full-stack developer focused on useful products, reliable systems, and thoughtful user experiences.",
+    url: "https://bowenwang.vercel.app",
+    siteName: "Bowen Wang",
     images: [
       {
-        url: '/me.jpg', // Using your profile picture
+        url: "/me.jpg",
         width: 800,
         height: 600,
-        alt: 'Bowen Wang',
+        alt: "Bowen Wang portrait",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
-  // Twitter card metadata
   twitter: {
-    card: 'summary_large_image',
-    title: 'Bowen Wang',
-    description: 'Full Stack Developer passionate about creating innovative solutions',
-    images: ['/me.jpg'], // Using your profile picture
+    card: "summary_large_image",
+    title: "Bowen Wang | Software Engineer",
+    description:
+      "Full-stack developer focused on useful products, reliable systems, and thoughtful user experiences.",
+    images: ["/me.jpg"],
   },
 };
 
@@ -57,17 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon-32.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <section data-aos="fade-up">...</section>
-        <div data-aos="zoom-in">...</div>
-        {children}
-      </body>
+      <body className="bg-[var(--background)] text-[var(--foreground)] antialiased">{children}</body>
     </html>
   );
 }

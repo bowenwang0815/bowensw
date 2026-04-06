@@ -1,5 +1,8 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { FaArrowUpRightFromSquare, FaChevronDown } from 'react-icons/fa6';
 
 export type ExperienceCardProps = {
   logo: string;
@@ -22,53 +25,87 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   link,
   rounded,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div data-aos="fade-up" className="w-full xl:w-4/5 mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden flex flex-col lg:flex-row transition-transform hover:scale-[1.02] hover:shadow-2xl duration-300">
-      {/* Left: Info */}
-      <div className="flex-1 p-8 flex flex-col justify-between">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="flex-shrink-0">
+    <article
+      data-aos="fade-up"
+      className="panel overflow-hidden rounded-[2rem] border border-transparent transition-all duration-300 hover:border-[var(--accent-soft)] hover:shadow-[0_26px_70px_rgba(20,54,66,0.16)]"
+    >
+      <button
+        type="button"
+        onClick={() => setIsOpen((open) => !open)}
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left sm:px-8"
+        aria-expanded={isOpen}
+      >
+        <div className="flex min-w-0 items-center gap-4">
+          <div className="rounded-2xl border border-[var(--border)] bg-white/90 p-3">
             <Image
               src={logo}
-              alt="Logo"
-              width={56}
-              height={56}
-              className={`rounded-full border-2 border-gray-200 bg-white object-contain ${rounded ? 'shadow-lg' : ''}`}
+              alt={`${name} logo`}
+              width={52}
+              height={52}
+              className={`h-13 w-13 object-contain ${rounded ? 'rounded-full' : 'rounded-xl'}`}
             />
           </div>
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 leading-tight">{role}</h3>
-            <span className="inline-block mt-1 px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-700 rounded-full tracking-wide border border-gray-200">
-              {name}
-            </span>
+
+          <div className="min-w-0">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent-dark)]">{timeframe}</p>
+            <h3 className="mt-1 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">{role}</h3>
+            <p className="truncate text-sm text-slate-600 sm:text-base">{name}</p>
           </div>
         </div>
-        <div className="text-gray-700 text-base mb-4">
-          {description}
+
+        <div className="flex shrink-0 items-center gap-3">
+          <span className="hidden rounded-full border border-[var(--border)] bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 sm:inline-flex">
+            {isOpen ? 'Close' : 'Open'}
+          </span>
+          <FaChevronDown
+            className={`text-sm text-slate-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          />
         </div>
-        <div className="text-gray-400 text-sm mb-6">
-          {timeframe}
+      </button>
+
+      {isOpen && (
+        <div className="grid gap-6 border-t border-[var(--border)] px-6 py-6 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="flex flex-col justify-between">
+            <div>
+              <p className="max-w-2xl text-base leading-8 text-slate-700">{description}</p>
+            </div>
+
+            <div className="mt-6">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-full border border-[var(--border)] bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 hover:-translate-y-0.5 hover:bg-white"
+              >
+                Visit organization
+                <FaArrowUpRightFromSquare className="text-sm" />
+              </a>
+            </div>
+          </div>
+
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative min-h-[220px] overflow-hidden rounded-[1.5rem]"
+            aria-label={`Visit ${name}`}
+          >
+            <Image
+              src={image}
+              alt={`${name} preview`}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+              style={{ objectPosition: 'center' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,54,66,0.45)] via-transparent to-transparent" />
+          </a>
         </div>
-      </div>
-      {/* Right: Image with overlay, clickable */}
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative flex-1 min-h-[220px] lg:min-h-0 lg:w-[350px] xl:w-[400px] 2xl:w-[450px] flex items-center justify-center group"
-        tabIndex={0}
-        aria-label={`Visit ${name}`}
-      >
-        <Image
-          src={image}
-          alt="Experience visual"
-          fill
-          className="object-cover rounded-br-2xl rounded-tr-2xl z-0 group-hover:scale-105 transition-transform"
-          style={{ objectPosition: 'center' }}
-        />
-      </a>
-    </div>
+      )}
+    </article>
   );
 };
 
-export default ExperienceCard; 
+export default ExperienceCard;

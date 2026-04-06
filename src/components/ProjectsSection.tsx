@@ -2,33 +2,47 @@ import ProjectCard from './ProjectCard';
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Projects</h2>
-        <div className="flex flex-col gap-8 w-full">
+    <section id="projects" className="py-10 sm:py-16">
+      <div className="section-shell">
+        <div className="section-heading mb-10">
+          <p className="eyebrow">Projects</p>
+          <h2 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">Selected builds.</h2>
+          <p className="text-lg leading-8 text-slate-600">Full-stack apps, mobile projects, and software for real organizations.</p>
+        </div>
+
+        <div className="flex flex-col gap-8">
+          <ProjectCard
+            image="/clchc-logo.svg"
+            title="Celebrating Life Community Health Center"
+            description="Built dashboards and appointment management tools for a nonprofit serving 22k+ patients. The work included a responsive React + TypeScript interface with full CRUD workflows, plus secure Node/Express APIs backed by PostgreSQL and Firebase-authenticated requests."
+            tech={['React', 'TypeScript', 'Chakra UI', 'Node.js', 'Express', 'PostgreSQL', 'Firebase']}
+            link="https://github.com/ctc-uci/clchc"
+            github="https://github.com/ctc-uci/clchc"
+            date="November 2025 - Present"
+          />
           <ProjectCard
             image="/fabflix.png"
             title="FabFlix"
-            description="Full-stack movie database web app deployed on AWS with Docker and Kubernetes. Built with Java Servlets, JDBC, and MySQL, supporting search, filtering, pagination, authentication, and payments. Optimized with connection pooling and load balancing, improving query performance by over 150%."
-            tech={["Java", "JDBC", "MySQL", "Docker", "Kubernetes", "AWS"]}
+            description="Full-stack movie database web app deployed on AWS with Docker and Kubernetes. Built with Java Servlets, JDBC, and MySQL, with search, filtering, pagination, authentication, and payments. Performance tuning around pooling and load balancing improved query speed significantly."
+            tech={['Java', 'JDBC', 'MySQL', 'Docker', 'Kubernetes', 'AWS']}
             link="https://github.com/bowenwang0815/2025-spring-cs-122b-team-super-idol"
             github="https://github.com/bowenwang0815/2025-spring-cs-122b-team-super-idol"
             date="March 2025 - June 2025"
           />
           <ProjectCard
             image="/cse.png"
-            title="Attendance Tracking System for NonProfit Organization"
-            description="Web and mobile platform built for a nonprofit Chinese dance organization Center Stage to improve how they manage classes, RSVPs, and attendance. This project replaces a manual, WeChat-based system with a centralized portal that saves time and reduces error."
-            tech={["React","Chakra UI", "Node.js", "PostgreSQL"]}
+            title="Attendance Tracking System for Center Stage"
+            description="Web and mobile platform for a nonprofit dance organization to manage classes, RSVPs, and attendance in one place. It replaces a manual WeChat-based workflow with a centralized portal that reduces admin overhead and lowers the chance of human error."
+            tech={['React', 'Chakra UI', 'Node.js', 'PostgreSQL']}
             link="https://github.com/ctc-uci/Center-Stage"
             github="https://github.com/ctc-uci/Center-Stage"
-            date="March 2025 - June 2025"
+            date="November 2024 - June 2025"
           />
-           <ProjectCard
+          <ProjectCard
             image="/touchinggrass.png"
             title="Touching Grass"
-            description="Touching Grass is a mobile app that encourages users to explore the outdoors by letting them identify plants in real time."
-            tech={["Swift", "Gemini AI"]}
+            description="Mobile app that encourages people to spend more time outdoors by identifying plants in real time and turning curiosity into an easy, playful interaction."
+            tech={['Swift', 'Gemini AI']}
             link="https://devpost.com/software/touching-grass-dc259j"
             github="https://github.com/bowenwang0815/TouchingGrass"
             date="April 2024"
@@ -36,8 +50,8 @@ export default function ProjectsSection() {
           <ProjectCard
             image="/petrpage.png"
             title="PetrPage"
-            description="PetrPage is a social media app designed to connect users within shared communities. It supports both casual hangouts and productivity-focused interactions, making it versatile for chat, collaboration, and social engagement."
-            tech={["React", "Node.js", "Python", "SQLite3"]}
+            description="Social platform built to connect people through shared communities, supporting both casual hangouts and more productivity-focused collaboration. The concept centered on making campus social interaction feel more intentional."
+            tech={['React', 'Node.js', 'Python', 'SQLite3']}
             link="https://devpost.com/software/petrpage"
             github="https://github.com/theNatePi/PetrPages"
             date="February 2024"
@@ -46,4 +60,4 @@ export default function ProjectsSection() {
       </div>
     </section>
   );
-} 
+}
