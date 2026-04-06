@@ -67,8 +67,7 @@ export default function AboutSection() {
                 ))}
               </div>
               <p className="mt-5 text-base leading-7 text-slate-700">
-                Studying Computer Science and Business Information Management with a strong academic record and a focus
-                on building software that has clear, practical value.
+                Double majoring in  Computer Science with Specialization in Information and Business Information Management
               </p>
             </div>
           </div>
@@ -79,8 +78,8 @@ export default function AboutSection() {
               <p className="mt-3 text-lg font-semibold">Basketball, concerts, travel, and exploring new cities.</p>
             </div>
             <div className="rounded-[1.5rem] border border-[var(--border)] bg-[rgba(197,106,61,0.08)] p-6">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent-dark)]">Currently chasing</p>
-              <p className="mt-3 text-lg font-semibold text-slate-900">More chances to ship thoughtful software at scale.</p>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent-dark)]">Next step</p>
+              <p className="mt-3 text-lg font-semibold text-slate-900">Incoming @ Capital One after graduation.</p>
             </div>
           </div>
         </div>

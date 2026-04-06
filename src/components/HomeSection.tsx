@@ -8,7 +8,7 @@ import { FaArrowRight, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 const quickStats = [
   { label: 'Based in', value: 'Southern California' },
   { label: 'Focus', value: 'Full-stack products' },
-  { label: 'Strength', value: 'Building useful software' },
+  { label: 'Next step', value: 'Incoming @ Capital One' },
 ];
 
 export default function HomeSection() {
