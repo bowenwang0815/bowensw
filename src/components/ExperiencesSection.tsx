@@ -18,6 +18,16 @@ export default function ExperiencesSection() {
 
         <div className="flex flex-col gap-8">
           <ExperienceCard
+            logo="/capitalone.png"
+            image="/capitalone.png"
+            role="Incoming Software Engineer"
+            name="Capital One"
+            description="Joining Capital One after graduation to work on software and systems at scale. I&apos;m excited to bring the same product-minded and systems-focused approach I&apos;ve built through nonprofit, student-facing, and full-stack work into a larger engineering environment."
+            timeframe="2026 - Incoming"
+            link="https://www.capitalone.com"
+            rounded={false}
+          />
+          <ExperienceCard
             logo="/ctc.svg"
             image="/ctc.svg"
             role="Full Stack Developer"

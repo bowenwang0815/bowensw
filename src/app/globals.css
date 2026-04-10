@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: url("/usagi/usagi-default.png") 0 0, auto;
 }
 
 body {
@@ -36,6 +37,10 @@ body {
     linear-gradient(180deg, #f9f5ee 0%, #f4efe5 35%, #eee3d2 100%);
   color: var(--foreground);
   font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+body {
+  cursor: url("/usagi/usagi-default.png") 0 0, auto;
 }
 
 body::before {
@@ -72,6 +77,7 @@ body::after {
 
 a,
 button {
+  cursor: url("/usagi/usagi-link.png") 3 0, pointer;
   transition:
     color 180ms ease,
     background-color 180ms ease,
@@ -79,6 +85,12 @@ button {
     transform 180ms ease,
     box-shadow 180ms ease,
     opacity 180ms ease;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: url("/usagi/usagi-text.png") 4 5, text;
 }
 
 section {
