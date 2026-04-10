@@ -17,8 +17,8 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-10 sm:py-16">
       <div className="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div data-aos="fade-right" className="relative min-h-[340px] lg:min-h-[380px]">
-          <div className="panel absolute left-0 top-6 w-[64%] rounded-[1.6rem] p-3">
+        <div data-aos="fade-right" className="relative min-h-[380px] sm:min-h-[430px] lg:min-h-[470px]">
+          <div className="panel absolute left-0 top-5 w-[62%] rounded-[1.6rem] p-3">
             <Image
               src="/me2.jpg"
               alt="Bowen Wang portrait"
@@ -27,7 +27,7 @@ export default function AboutSection() {
               className="h-auto w-full rounded-[1.2rem] object-cover"
             />
           </div>
-          <div className="panel absolute bottom-0 right-4 w-[54%] rounded-[1.6rem] p-3">
+          <div className="panel absolute bottom-0 right-0 w-[66%] rounded-[1.6rem] p-3">
             <Image
               src="/me3.jpg"
               alt="Bowen Wang casual portrait"

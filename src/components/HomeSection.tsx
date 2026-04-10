@@ -9,7 +9,7 @@ import ParticleConstellation from './ParticleConstellation';
 
 const quickStats = [
   { label: 'Based in', value: 'Southern California' },
-  { label: 'Focus', value: 'Full-stack products' },
+  { label: 'Focus', value: 'Full-stack + backend systems' },
   { label: 'Next step', value: 'Incoming @ Capital One' },
 ];
 
@@ -131,11 +131,6 @@ export default function HomeSection() {
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--sand)] px-4 py-3 shadow-lg sm:absolute sm:-left-8 sm:top-6 sm:z-10 sm:max-w-[15rem]">
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent-dark)]">Now building</p>
               <p className="mt-1 text-sm font-semibold text-slate-900">Community tools, dashboards, and web apps</p>
-            </div>
-
-            <div className="order-3 rounded-2xl border border-[var(--border)] bg-white/95 px-4 py-3 shadow-lg sm:absolute sm:-right-8 sm:bottom-8 sm:z-10 sm:max-w-[14rem]">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent-dark)]">Approach</p>
-              <p className="mt-1 text-sm font-semibold text-slate-900">Fast iteration with strong fundamentals</p>
             </div>
 
             <div className="relative order-2 overflow-hidden rounded-[1.6rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.45),rgba(234,219,196,0.65))] p-3">
