@@ -8,6 +8,8 @@ import ExperiencesSection from '../components/ExperiencesSection';
 import ProjectsSection from '../components/ProjectsSection';
 import GitHubCalendarSection from '../components/GitHubCalendarSection';
 import ContactSection from '../components/ContactSection';
+import CursorGlow from '../components/CursorGlow';
+import ScrollProgress from '../components/ScrollProgress';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +25,9 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen overflow-x-clip pb-8">
+      <ScrollProgress />
+      <CursorGlow />
+
       <nav className="fixed inset-x-0 top-0 z-50">
         <div className="section-shell pt-4">
           <div className="panel flex h-16 items-center justify-between rounded-full px-4 sm:px-6">

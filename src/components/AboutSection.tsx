@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ScrambleHeading from './ScrambleHeading';
 
 const highlights = [
   'Computer Science and Business Information Management student at UC Irvine.',
@@ -7,7 +8,7 @@ const highlights = [
 
 const educationDetails = [
   { label: 'School', value: 'UC Irvine' },
-  { label: 'Study', value: 'Computer Science + BIM' },
+  { label: 'Major', value: 'Computer Science + Business Information Management' },
   { label: 'GPA', value: '3.93' },
   { label: 'Graduation', value: 'June 2026' },
 ];
@@ -40,9 +41,9 @@ export default function AboutSection() {
         <div data-aos="fade-left" className="panel rounded-[2rem] p-8 sm:p-10 lg:p-12">
           <div className="section-heading">
             <p className="eyebrow">About</p>
-            <h2 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">Built by perspective.</h2>
+            <ScrambleHeading text="Built by perspective." className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl" />
             <p className="text-lg leading-8 text-slate-600">
-              I&apos;m a 4th year at UC Irvine studying Computer Science and Business Information Management. I care about
+              I&apos;m a 4th year at UC Irvine double major in Computer Science and Business Information Management. I care about
               making software that feels useful, intentional, and worth building in the first place.
             </p>
           </div>

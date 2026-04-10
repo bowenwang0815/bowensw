@@ -1,4 +1,5 @@
 import ExperienceCard from './ExperienceCard';
+import ScrambleHeading from './ScrambleHeading';
 
 export default function ExperiencesSection() {
   return (
@@ -6,7 +7,10 @@ export default function ExperiencesSection() {
       <div className="section-shell">
         <div className="section-heading mb-10">
           <p className="eyebrow">Experience</p>
-          <h2 className="text-5xl font-black tracking-[-0.04em] text-slate-900 sm:text-7xl">Real work. Real impact.</h2>
+          <ScrambleHeading
+            text="Real work. Real impact."
+            className="text-5xl font-black tracking-[-0.04em] text-slate-900 sm:text-7xl"
+          />
           <p className="text-lg leading-8 text-slate-600">
             Product, operations, and people-facing work across nonprofits and student support.
           </p>

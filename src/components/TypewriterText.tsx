@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 interface TypewriterTextProps {
   texts: string[];
+  prefix?: string;
   speed?: number;
   deleteSpeed?: number;
   pauseTime?: number;
@@ -11,6 +12,7 @@ interface TypewriterTextProps {
 
 export default function TypewriterText({
   texts,
+  prefix = '',
   speed = 95,
   deleteSpeed = 55,
   pauseTime = 2200,
@@ -46,7 +48,8 @@ export default function TypewriterText({
   return (
     <div className="inline-flex min-h-[3.5rem] items-center rounded-full border border-[var(--border)] bg-white/70 px-5 py-3 shadow-[0_10px_35px_rgba(20,54,66,0.08)] backdrop-blur">
       <span className="text-xl font-semibold tracking-tight text-[var(--deep)] sm:text-2xl">
-        {currentText}
+        {prefix ? <span>{prefix} </span> : null}
+        <span className="border-b-2 border-[var(--accent)] pb-0.5 text-[var(--accent-dark)]">{currentText}</span>
         <span className="ml-1 inline-block animate-pulse text-[var(--accent)]">|</span>
       </span>
     </div>

@@ -13,6 +13,8 @@
   --deep: #143642;
   --sand: #eadbc4;
   --shadow: 0 24px 70px rgba(31, 41, 55, 0.12);
+  --cursor-glow-x: 50vw;
+  --cursor-glow-y: 50vh;
 }
 
 @theme inline {
@@ -47,6 +49,17 @@ body::before {
     linear-gradient(90deg, rgba(20, 54, 66, 0.03) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 240px at var(--cursor-glow-x) var(--cursor-glow-y), rgba(197, 106, 61, 0.12), transparent 72%),
+    radial-gradient(circle 320px at var(--cursor-glow-x) var(--cursor-glow-y), rgba(20, 54, 66, 0.08), transparent 75%);
+  opacity: 0.8;
 }
 
 * {
@@ -101,4 +114,40 @@ section {
 
 .muted {
   color: var(--muted);
+}
+
+.cursor-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  height: 14rem;
+  width: 14rem;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 214, 170, 0.38) 0%, rgba(197, 106, 61, 0.18) 42%, transparent 74%);
+  filter: blur(28px);
+  transform: translate3d(calc(var(--cursor-glow-x) - 7rem), calc(var(--cursor-glow-y) - 7rem), 0);
+  transition: opacity 220ms ease;
+}
+
+.magnetic-item {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+  body::after {
+    display: none;
+  }
 }

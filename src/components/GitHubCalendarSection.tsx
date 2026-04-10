@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
+import ScrambleHeading from './ScrambleHeading';
 
 const GitHubCalendar = dynamic(() => import('react-github-calendar'), { ssr: false });
 
@@ -10,7 +11,7 @@ export default function GitHubCalendarSection() {
         <div className="panel rounded-[2rem] p-8 sm:p-10">
           <div className="section-heading mb-8">
             <p className="eyebrow">GitHub</p>
-            <h2 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">Recent activity.</h2>
+            <ScrambleHeading text="Recent activity." className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl" />
             <p className="text-lg leading-8 text-slate-600">A quick snapshot of how I work and keep momentum.</p>
           </div>
 

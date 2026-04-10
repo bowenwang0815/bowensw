@@ -1,4 +1,5 @@
 import ProjectCard from './ProjectCard';
+import ScrambleHeading from './ScrambleHeading';
 
 export default function ProjectsSection() {
   return (
@@ -6,7 +7,7 @@ export default function ProjectsSection() {
       <div className="section-shell">
         <div className="section-heading mb-10">
           <p className="eyebrow">Projects</p>
-          <h2 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">Selected builds.</h2>
+          <ScrambleHeading text="Selected builds." className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl" />
           <p className="text-lg leading-8 text-slate-600">Full-stack apps, mobile projects, and software for real organizations.</p>
         </div>
 
