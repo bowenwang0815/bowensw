@@ -87,6 +87,15 @@ button {
     opacity 180ms ease;
 }
 
+main :where(p, h1, h2, h3, h4, h5, h6, li, dt, dd, blockquote, figcaption) {
+  cursor: url("/usagi/usagi-text.png") 4 5, text;
+}
+
+a :where(p, h1, h2, h3, h4, h5, h6, li, dt, dd, blockquote, figcaption),
+button :where(p, h1, h2, h3, h4, h5, h6, li, dt, dd, blockquote, figcaption) {
+  cursor: inherit;
+}
+
 input,
 textarea,
 [contenteditable="true"] {
